@@ -1,0 +1,60 @@
+@media(max-width:950px){
+  .contact-container {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.contact-container .contact-left {
+  width: 100%;
+  height: 400px;
+  padding:  0;
+}
+.contact-container .contact-right{
+  width: 100%;
+  margin-top: 100px;
+}
+.right-column .hotline {
+  display: flex;
+  gap: 70px;
+  padding: 0;
+}
+.break{
+  display: none;
+}
+}
+
+
+@media (max-width: 950px) {
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.contact-container .contact-left {
+  width: 100%;
+  height: 400px;
+  padding:  0;
+}
+  .right-column {
+    align-items: center;
+    width: 100%;
+  }
+
+  .right-column .hotline {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 0;
+    height: auto;
+  }
+
+  .hotline .hot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
