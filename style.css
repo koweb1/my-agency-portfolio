@@ -110,6 +110,9 @@ nav .bx-x {
   text-transform: uppercase;
   margin: 5px 0;
 }
+.landing {
+  display: none;
+}
 span {
   color: var(--blue-main);
 }
@@ -208,7 +211,7 @@ span {
     display: flex;
     position: absolute;
     right: 0;
-    margin-right: -5px;
+    margin-right: -1px;
     top: 0;
     background: linear-gradient(
       135deg,
@@ -318,7 +321,22 @@ span {
     padding: 0 20px;
   }
 }
-
+@media (max-width: 448px) {
+  .header .balance h4 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .sub-heading h1 {
+    padding: 0 12px;
+    font-size: 24px;
+  }
+  .sub-heading p {
+    padding: 0 25px;
+  }
+  .sub-heading .we {
+    margin-top: 20px;
+  }
+}
 .containe {
   width: 100%;
   padding: 40px;
