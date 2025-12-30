@@ -1,18 +1,15 @@
-console.log("NAV JS LOADED");
+const hamburger = document.getElementById("hamburger");
+const close = document.getElementById("menu");
+const navLinks = document.querySelector(".nav-links");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.querySelector(".bx-menu");
-  const cancel = document.querySelector(".bx-x");
-  const navLinks = document.querySelector(".nav-links");
+hamburger.addEventListener("click", () => {
+  console.log("Hamburger clicked!");
+  navLinks.style.opacity = 1;
+  hamburger.style.opacity = 0;
+});
 
-  if (!menu || !navLinks) return;
-
-  menu.addEventListener("click", () => {
-    navLinks.classList.add("show");
-    navLinks.style.zIndex = "9999";
-  });
-
-  cancel.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  });
+close.addEventListener("click", () => {
+  console.log("Close clicked!");
+  navLinks.style.opacity = 0;
+  hamburger.style.opacity = 1;
 });
