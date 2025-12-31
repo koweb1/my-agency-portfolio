@@ -58,3 +58,10 @@
     align-items: center;
   }
 }
+
+
+
+
+background: rgba(8, 15, 30, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);

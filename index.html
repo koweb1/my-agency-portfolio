@@ -29,7 +29,7 @@
     <div class="container">
       <header class="header">
         <div class="balance">
-          <img src="./logo.png" alt="" />
+          <img src="./logo.png" alt="aktotech logo" />
           <h4 class="logo"><strong>akto</strong><span>Tech</span></h4>
         </div>
         <i class="bx bx-menu" id="hamburger" ></i>
@@ -57,8 +57,8 @@
           and drive real results.
         </p>
         <div class="btn1">
-          <button class="btn btn-primary">Start a Project</button>
-          <button class="btn btn-secondary">View Our Work</button>
+          <a href="#contact" class="btn btn-primary">Start a Project</button>
+          <a href="#project" class="btn btn-secondary">View Our Work</button>
         </div>
       </div>
       <div class="right">
@@ -89,17 +89,17 @@
 
             <div class="right1">
               <div class="card">
-                <div class="number">+10k</div>
+                <div class="number" data-target="200"></div>
                 <div class="down">Client Projects Delivered</div>
               </div>
 
               <div class="card">
-                <div class="number">+1.5k</div>
+                <div class="number" data-target="150"></div>
                 <div class="down">Creative & Technical Experts</div>
               </div>
 
               <div class="card">
-                <div class="number">+24.1k</div>
+                <div class="number" data-target="200"></div>
                 <div class="down">Successfully Launched Projects</div>
               </div>
             </div>
@@ -122,7 +122,7 @@
                 customers. Every project is crafted with performance,
                 accessibility, and scalability in mind.
               </p>
-              <button>Read More</button>
+              <a href="#contact" class="about-button">Learn More</a>
             </div>
 
             <div class="main-right">
@@ -133,23 +133,15 @@
                 while ensuring consistency and recognition across all digital
                 platforms and customer touchpoints.
               </p>
-              <button>Learn More</button>
+              <a href="#contact" class="about-button">Learn More</a>
             </div>
           </div>
           <div class="last-content">
             <div class="act">Digital Growth & Support</div>
-            <p>
-              We help businesses scale digitally through ongoing support,
-              continuous optimization, and smart, future-ready technical
-              solutions designed to adapt as your business grows. Our approach
-              focuses on improving performance, strengthening digital
-              infrastructure, and ensuring your systems remain secure,
-              efficient, and reliable at every stage of growth. By combining
-              strategic insight with hands-on technical expertise, we help
-              brands build long-term stability, enhance their online presence,
-              and maintain a competitive edge in an evolving digital landscape.
+            <p class="last">
+              We help businesses scale digitally through ongoing support, continuous optimization, and future-ready technical solutions that evolve with growth. Our approach strengthens performance, reinforces digital infrastructure, and ensures systems remain secure, efficient, and reliable. By combining strategic insight with deep technical expertise, we help brands achieve long-term stability and maintain a competitive edge in an evolving digital landscape.
             </p>
-            <button>Learn More</button>
+            <a href="#contact" class="about-button a">Learn More</a>
           </div>
         </div>
       </div>
@@ -206,25 +198,25 @@
       <h2>Recent Project</h2>
       <div class="project">
         <div class="project-card">
-          <div class="img"><img src="./about.webp" alt="project images" /></div>
+          <div class="img"><img src="./coffee.jpg" alt="Screenshot of a coffee website project designed and developed by me" loading="lazy" /></div>
           <p>
-            Another short description highlighting the features of this project.
+            A modern coffee website designed with a warm aesthetic, smooth navigation, and a user-focused layout to enhance brand appeal and engagement
           </p>
-          <a href="#" class="btn">View Project</a>
+          <a href="https://koweb1.github.io/coffee/" class="btn">View Project</a>
         </div>
 
         <div class="project-card">
-          <div class="img"><img src="" alt="project images" /></div>
+          <div class="img"><img src="./nature.jpg" alt="Screenshot of the Nature Calls website project designed and developed by me" loading="lazy" /></div>
           <p>
-            Another short description highlighting the features of this project.
+            A nature-inspired website featuring a clean design, intuitive navigation, and responsive layout to showcase environmental content effectively.
           </p>
-          <a href="#" class="btn">View Project</a>
+          <a href="https://koweb1.github.io/pra/" class="btn">View Project</a>
         </div>
 
         <div class="project-card">
-          <div class="img"><img src="" alt="project images" /></div>
+          <div class="img"><img src="./text-converter.jpg" alt=" Screenshot of a text converter website featuring multiple conversion options and intuitive design."  loading="lazy" /></div>
           <p>
-            Another short description highlighting the features of this project.
+            A user-friendly text converter website that allows easy conversion between different text formats with a clean and responsive design.
           </p>
           <a href="#" class="btn">View Project</a>
         </div>
@@ -369,5 +361,45 @@
       </div>
     </footer>
     <script src="./index.js"></script>
+    <script>
+  const counters = document.querySelectorAll(".number");
+  let started = false;
+
+  const startCount = () => {
+    counters.forEach(counter => {
+      const target = +counter.dataset.target;
+      const duration = 3000;
+      const startTime = performance.now();
+
+      const update = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(progress * target);
+
+        if (target >= 1000) {
+          counter.innerText = (value / 1000).toFixed(1).replace('.0','') + "k";
+        } else {
+          counter.innerText = value;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      };
+
+      requestAnimationFrame(update);
+    });
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !started) {
+      started = true;
+      startCount();
+    }
+  }, { threshold: 0.4 });
+
+  observer.observe(document.querySelector(".right1"));
+</script>
+
   </body>
 </html>
