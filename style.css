@@ -97,7 +97,7 @@ nav .bx-x {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .sub-heading .we {
   color: #fff;
@@ -217,11 +217,7 @@ span {
     right: 0;
     margin-right: -1px;
     top: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.02)
-    );
+    background: black;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     min-height: 100px;
@@ -240,16 +236,22 @@ span {
     cursor: pointer;
     padding: 10px 20px;
   }
+  .container .nav-links a {
+    color: var(--blue-main);
+  }
+  .container .nav-links a:hover,
+  .container .nav-links a.active {
+    color: #fff;
+  }
   nav .bx-x {
     color: #fff;
-    font-size: 23px;
+    font-size: 25px;
     display: block;
     position: fixed;
-    right: 20px;
-    top: 5px;
-
+    right: 25px;
+    top: 10px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 10800;
   }
   .container .header {
     padding: 30px 0;
@@ -259,6 +261,13 @@ span {
   }
   .sub-heading h1 {
     font-size: 35px;
+  }
+  .container .header {
+    position: fixed;
+    top: 0;
+    z-index: 10200;
+    padding: 20px 5px;
+    background-color: black;
   }
 }
 @media (max-width: 760px) {
@@ -270,7 +279,7 @@ span {
 }
 @media (max-width: 630px) {
   .container {
-    height: 90vh;
+    height: 100vh;
   }
   header .bx-menu {
     font-size: 23px;
@@ -280,12 +289,9 @@ span {
     font-size: 22px;
     font-weight: 500;
   }
-  .container .header {
-    padding: 20px 5px;
-    background-color: #0b1220;
-  }
+
   .container .sub-heading {
-    margin-top: 15px;
+    padding-top: 25%;
   }
   .sub-heading p {
     padding: 0 20px;
@@ -326,6 +332,9 @@ span {
   }
 }
 @media (max-width: 448px) {
+  .container .sub-heading {
+    padding-top: 33%;
+  }
   .header .balance h4 {
     font-size: 18px;
     font-weight: 500;
@@ -335,19 +344,21 @@ span {
     font-size: 20px;
   }
   .sub-heading p {
-    padding: 0 25px;
+    padding: 0 10px;
+    max-width: 420px;
     font-size: 13px;
   }
   .sub-heading .we {
-    font-size: 17px;
-    padding: 0;
+    font-size: 20px;
+    padding: 2px 0;
   }
   .sub-heading .btn1 {
     gap: 10px;
   }
   .sub-heading .btn1 a {
-    width: 140px;
+    width: 120px;
     height: 45px;
+    font-size: 12px;
     margin-top: -10px;
     border: none;
   }
